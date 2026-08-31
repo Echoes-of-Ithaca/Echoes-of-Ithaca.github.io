@@ -62,13 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
             memberDiv.className = 'team-card';
             memberDiv.innerHTML = `
                 <img src="assets/avatar_placeholder.jpg" alt="${member.name}" class="team-avatar">
-                <h3 style="font-family: var(--font-heading); color: var(--color-text); font-size: 1.3rem;">${member.name}</h3>
-                <p style="color: var(--color-accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;" data-es="${member.role_es}" data-en="${member.role_en}">${member.role_es}</p>
-                <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.4;" data-es="${member.bio_es}" data-en="${member.bio_en}">${member.bio_es}</p>
-                <div class="team-links">
-                    <a href="${member.portfolio}" target="_blank">Portfolio</a>
-                    <span>|</span>
-                    <a href="${member.linkedin}" target="_blank">LinkedIn</a>
+                <div class="team-info">
+                    <h3 style="font-family: var(--font-heading); color: var(--color-text); font-size: 1.5rem; margin-bottom: 0.2rem;">${member.name}</h3>
+                    <p style="color: var(--color-accent); font-weight: 600; font-size: 1rem; margin-bottom: 0.8rem;" data-es="${member.role_es}" data-en="${member.role_en}">${member.role_es}</p>
+                    <p style="font-size: 1rem; color: var(--color-text-light); line-height: 1.5;" data-es="${member.bio_es}" data-en="${member.bio_en}">${member.bio_es}</p>
+                    <div class="team-links">
+                        <a href="${member.portfolio}" target="_blank">Portfolio</a>
+                        <span class="sep">|</span>
+                        <a href="${member.linkedin}" target="_blank">LinkedIn</a>
+                    </div>
                 </div>
             `;
             teamGrid.appendChild(memberDiv);
