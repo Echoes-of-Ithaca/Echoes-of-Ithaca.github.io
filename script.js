@@ -2,16 +2,39 @@
 function setLanguage(lang) {
     // Replace text in all elements with data-es / data-en
     document.querySelectorAll('[data-es]').forEach(el => {
-        el.innerHTML = el.getAttribute('data-' + lang);
+        if(el.getAttribute('data-' + lang)) {
+            el.innerHTML = el.getAttribute('data-' + lang);
+        }
     });
 
-    // Update active state on toggle buttons
-    document.getElementById('btn-es').classList.remove('active');
-    document.getElementById('btn-en').classList.remove('active');
-    document.getElementById('btn-' + lang).classList.add('active');
+    // Update active state on toggle buttons safely
+    const btnEs = document.getElementById('btn-es');
+    const btnEn = document.getElementById('btn-en');
+    
+    if (btnEs && btnEn) {
+        btnEs.classList.remove('active');
+        btnEn.classList.remove('active');
+        const activeBtn = document.getElementById('btn-' + lang);
+        if(activeBtn) activeBtn.classList.add('active');
+    }
 
     // Save preference
     localStorage.setItem('lang', lang);
+}
+
+// Slider Logic for index.html
+function slideLeft() {
+    const track = document.getElementById('slider-track');
+    if (track) {
+        track.scrollBy({ left: -320, behavior: 'smooth' });
+    }
+}
+
+function slideRight() {
+    const track = document.getElementById('slider-track');
+    if (track) {
+        track.scrollBy({ left: 320, behavior: 'smooth' });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -52,22 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize language on load
+    // Initialize language on load for all pages
     const savedLang = localStorage.getItem('lang') || 'es';
     setLanguage(savedLang);
-
-// Slider Logic for index.html
-function slideLeft() {
-    const track = document.getElementById('slider-track');
-    if (track) {
-        track.scrollBy({ left: -320, behavior: 'smooth' });
-    }
-}
-
-function slideRight() {
-    const track = document.getElementById('slider-track');
-    if (track) {
-        track.scrollBy({ left: 320, behavior: 'smooth' });
-    }
-}
 });
