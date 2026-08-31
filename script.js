@@ -81,3 +81,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('lang') || 'es';
     setLanguage(savedLang);
 });
+
+// Tab switching logic for production.html
+function switchTab(tabId) {
+    // Hide all contents
+    document.querySelectorAll('.tab-content').forEach(el => {
+        el.style.display = 'none';
+    });
+    // Remove active class from buttons
+    document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active');
+    });
+    
+    // Show selected content and activate button
+    const targetContent = document.getElementById('tab-' + tabId);
+    if(targetContent) targetContent.style.display = 'block';
+    
+    const targetBtn = document.getElementById('btn-tab-' + tabId);
+    if(targetBtn) targetBtn.classList.add('active');
+}

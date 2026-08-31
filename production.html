@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <title>Producción - Nemea Digital Studio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="innerpage">
+
+    <!-- Language Toggle (Independent) -->
+    <div class="lang-toggle">
+        <span onclick="setLanguage('es')" id="btn-es" class="active">ES</span>
+        <span class="separator">/</span>
+        <span onclick="setLanguage('en')" id="btn-en">EN</span>
+    </div>
+
+    <!-- Header (Inner) -->
+    <div id="header" class="innerpage">
+        <nav id="nav">
+            <div class="nav-line nav-line-left"></div>
+            <ul>
+                <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li><a href="team.html" data-es="Equipo" data-en="Team">Equipo</a></li>
+                <li class="active"><a href="production.html" data-es="Producción" data-en="Production">Producción</a></li>
+                <li><a href="epic.html" data-es="Epic: The Musical" data-en="Epic: The Musical">Epic: The Musical</a></li>
+            </ul>
+            <div class="nav-line nav-line-right"></div>
+        </nav>
+        <div class="hero-content" style="padding-top: 4rem;">
+            <h1 data-es="Diario de Desarrollo" data-en="Development Diary">Diario de Desarrollo</h1>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="wrapper style1">
+        <div class="container">
+            
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="switchTab('timeline')" id="btn-tab-timeline" data-es="Timeline" data-en="Timeline">Timeline</button>
+                <button class="tab-btn" onclick="switchTab('production')" id="btn-tab-production" data-es="Producción" data-en="Production">Producción</button>
+            </div>
+
+            <!-- Tab 1: Timeline -->
+            <div id="tab-timeline" class="tab-content" style="display: block;">
+                <header class="section-header">
+                    <h2 data-es="Evolución del Proyecto" data-en="Project Evolution">Evolución del Proyecto</h2>
+                    <p data-es="Un vistazo a cómo ha ido tomando forma Echoes of Ithaca desde los primeros bocetos." data-en="A look at how Echoes of Ithaca has taken shape from the first sketches.">Un vistazo a cómo ha ido tomando forma Echoes of Ithaca desde los primeros bocetos.</p>
+                </header>
+                
+                <div class="evolution-grid">
+                    <div class="evo-card">
+                        <img src="assets/char_placeholder.png" alt="Evolución Personajes">
+                        <h4 data-es="Personajes" data-en="Characters">Personajes</h4>
+                        <p data-es="Diseño conceptual y modelado 3D de Odiseo y su tripulación." data-en="Concept design and 3D modeling of Odysseus and his crew.">Diseño conceptual y modelado 3D de Odiseo y su tripulación.</p>
+                    </div>
+                    <div class="evo-card">
+                        <img src="assets/env_placeholder.png" alt="Evolución Entornos">
+                        <h4 data-es="Entornos" data-en="Environments">Entornos</h4>
+                        <p data-es="De las ideas iniciales en papel a escenarios construidos e iluminados en el motor." data-en="From initial ideas on paper to built and lit scenarios in the engine.">De las ideas iniciales en papel a escenarios construidos e iluminados en el motor.</p>
+                    </div>
+                    <div class="evo-card">
+                        <img src="assets/hero_bg.jpg" alt="Evolución UI">
+                        <h4 data-es="Diseño e Interfaz" data-en="Design & UI">Diseño e Interfaz</h4>
+                        <p data-es="Iteraciones de la interfaz de usuario para una experiencia inmersiva." data-en="UI iterations for an immersive experience.">Iteraciones de la interfaz de usuario para una experiencia inmersiva.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Producción -->
+            <div id="tab-production" class="tab-content" style="display: none;">
+                
+                <!-- Methodology -->
+                <div class="prod-methodology">
+                    <div class="prod-text">
+                        <h2 data-es="METODOLOGÍA" data-en="METHODOLOGY">METODOLOGÍA</h2>
+                        <p data-es="Para este proyecto, Nemea Digital Studio utiliza metodologías ágiles (Scrum). Organizamos las tareas en Sprints semanales y asignamos responsables para asegurar que el desarrollo fluya sin problemas." data-en="For this project, Nemea Digital Studio uses agile methodologies (Scrum). We organize tasks in weekly Sprints and assign responsibilities to ensure smooth development.">Para este proyecto, Nemea Digital Studio utiliza metodologías ágiles (Scrum). Organizamos las tareas en Sprints semanales y asignamos responsables para asegurar que el desarrollo fluya sin problemas.</p>
+                    </div>
+                    <div class="prod-graphic">
+                        <!-- Placeholder for the Scrum chart -->
+                        <div class="scrum-placeholder">
+                            <h4 data-es="Esquema Scrum" data-en="Scrum Diagram">Esquema Scrum</h4>
+                            <p>(Sprints, Backlog, Milestones, Scrum Teams)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Production Tools (3 cols) -->
+                <header class="section-header" style="margin-top: 5rem; margin-bottom: 2rem;">
+                    <h2 data-es="HERRAMIENTAS DE PRODUCCIÓN" data-en="PRODUCTION TOOLS">HERRAMIENTAS DE PRODUCCIÓN</h2>
+                </header>
+                <div class="features-grid">
+                    <article class="tech-box">
+                        <div class="tech-icon-large">📊</div>
+                        <h3 data-es="HACK'N'PLAN" data-en="HACK'N'PLAN">HACK'N'PLAN</h3>
+                        <p data-es="Utilizado para la planificación, documentación y seguimiento del progreso del juego." data-en="Used for planning, documenting, and tracking game progress.">Utilizado para la planificación, documentación y seguimiento del progreso del juego.</p>
+                    </article>
+                    <article class="tech-box">
+                        <div class="tech-icon-large">☁️</div>
+                        <h3 data-es="GOOGLE DRIVE" data-en="GOOGLE DRIVE">GOOGLE DRIVE</h3>
+                        <p data-es="Nuestra herramienta principal para el almacenamiento en la nube y compartición de assets." data-en="Our main tool for cloud storage and asset sharing.">Nuestra herramienta principal para el almacenamiento en la nube y compartición de assets.</p>
+                    </article>
+                    <article class="tech-box">
+                        <div class="tech-icon-large">💬</div>
+                        <h3 data-es="DISCORD" data-en="DISCORD">DISCORD</h3>
+                        <p data-es="Canal de comunicación principal durante todo el proceso de desarrollo." data-en="Main communication channel during the development process.">Canal de comunicación principal durante todo el proceso de desarrollo.</p>
+                    </article>
+                </div>
+
+                <!-- Tech Stacks -->
+                <header class="section-header" style="margin-top: 6rem; margin-bottom: 2rem;">
+                    <h2 data-es="NUESTROS TECH STACKS" data-en="OUR TECH STACKS">NUESTROS TECH STACKS</h2>
+                </header>
+
+                <div class="tech-category">
+                    <h3 data-es="ARTIST & DESIGN TECH STACK" data-en="ARTIST & DESIGN TECH STACK">ARTIST & DESIGN TECH STACK</h3>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <div class="tech-logo">Ps</div>
+                            <div class="tech-info">
+                                <h4>Adobe Photoshop</h4>
+                                <p data-es="Edición de gráficos rasterizados." data-en="Raster graphics editing.">Edición de gráficos rasterizados.</p>
+                            </div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-logo">Ai</div>
+                            <div class="tech-info">
+                                <h4>Adobe Illustrator</h4>
+                                <p data-es="Creación de vectores y diseño 2D." data-en="Vector creation and 2D design.">Creación de vectores y diseño 2D.</p>
+                            </div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-logo" style="background:#555; color:white;">U</div>
+                            <div class="tech-info">
+                                <h4>Unity</h4>
+                                <p data-es="Motor gráfico principal del proyecto." data-en="Main game engine of the project.">Motor gráfico principal del proyecto.</p>
+                            </div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-logo" style="background:#06a; color:white;">M</div>
+                            <div class="tech-info">
+                                <h4>Maya</h4>
+                                <p data-es="Modelado y animación 3D." data-en="3D modeling and animation.">Modelado y animación 3D.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 data-es="PROGRAMMING TECH STACK" data-en="PROGRAMMING TECH STACK">PROGRAMMING TECH STACK</h3>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <div class="tech-logo" style="background:#854cc7; color:white;">VS</div>
+                            <div class="tech-info">
+                                <h4>Visual Studio</h4>
+                                <p data-es="Entorno de desarrollo integrado para programación." data-en="Integrated development environment for programming.">Entorno de desarrollo integrado para programación.</p>
+                            </div>
+                        </div>
+                        <div class="tech-card">
+                            <div class="tech-logo" style="background:#f14e32; color:white;">Git</div>
+                            <div class="tech-info">
+                                <h4>Git & GitHub</h4>
+                                <p data-es="Control de versiones y repositorios." data-en="Version control and repositories.">Control de versiones y repositorios.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <hr class="footer-line">
+            <div class="social-icons">
+                <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+                <a href="#" class="social-link" title="Instagram">📷</a>
+                <a href="#" class="social-link" title="YouTube">▶️</a>
+                <a href="#" class="social-link" title="Discord">💬</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
