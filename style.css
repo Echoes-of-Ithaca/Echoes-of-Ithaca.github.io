@@ -110,12 +110,19 @@ ul { list-style: none; }
 
 /* Language Toggle */
 .lang-toggle {
-    position: absolute;
+    position: fixed;
+    top: 2rem;
     right: 2rem;
+    z-index: 9999;
     color: white;
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 700;
+    background: rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--color-primary);
 }
 
 .lang-toggle span {
