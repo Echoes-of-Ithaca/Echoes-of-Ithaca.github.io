@@ -13,65 +13,97 @@
     <div id="header" class="homepage">
         <nav id="nav">
             <ul>
-                <li class="active"><a href="index.html">Inicio</a></li>
-                <li><a href="#features">El Juego</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="production.html">Production</a></li>
                 <li><a href="epic.html">Epic: The Musical</a></li>
-                <li><a href="team.html">El Equipo</a></li>
             </ul>
         </nav>
         
         <div class="hero-content">
             <h1>Echoes of Ithaca</h1>
-            <p>Una odisea interactiva que reinventa el mito clásico. Descubre el mundo antiguo bajo una nueva luz.</p>
-            <a href="#features" class="btn">Descubre Más</a>
+            <a href="https://github.com/Echoes-of-Ithaca" target="_blank" class="btn play-btn">Play</a>
         </div>
     </div>
 
-    <!-- Features Section -->
-    <div class="wrapper style1" id="features">
+    <!-- Core Pillars Section -->
+    <div class="wrapper style1" id="pillars">
         <div class="container">
             <header class="section-header">
-                <h2>Explora la Odisea</h2>
-                <p>Mecánicas y arte inspirados en los poemas homéricos.</p>
+                <h2>Core Pillars</h2>
             </header>
             
             <div class="features-grid">
                 <article class="feature-box">
-                    <img src="assets/char_placeholder.png" alt="Historia" />
-                    <h3>Narrativa Épica</h3>
-                    <p>Sigue los pasos de Odiseo en un viaje de regreso a casa que pondrá a prueba tu voluntad. Tomarás decisiones que forjarán tu propio destino.</p>
+                    <div class="icon-placeholder">🎵</div>
+                    <h3>Música</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </article>
                 <article class="feature-box">
-                    <img src="assets/env_placeholder.png" alt="Entornos" />
-                    <h3>Mundo Vibrante</h3>
-                    <p>Sumérgete en un Mediterráneo reimaginado con una paleta de colores pastel única, desde playas cálidas hasta templos monumentales.</p>
+                    <div class="icon-placeholder">⚔️</div>
+                    <h3>Combate</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </article>
                 <article class="feature-box">
-                    <img src="assets/avatar_placeholder.jpg" alt="Personajes" />
-                    <h3>Dioses y Monstruos</h3>
-                    <p>Enfréntate a criaturas legendarias y negocia con deidades implacables en un sistema de diálogos y combates llenos de estrategia.</p>
+                    <div class="icon-placeholder">🧭</div>
+                    <h3>Exploración</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </article>
             </div>
         </div>
     </div>
 
-    <!-- Banner Section -->
-    <div class="wrapper alt">
+    <!-- Game Features Slider -->
+    <div class="wrapper alt" id="game-features">
         <div class="container">
             <header class="section-header">
-                <h2>El progreso de Nemea Digital Studio</h2>
-                <p>Actualmente nos encontramos en pleno desarrollo construyendo los primeros niveles interactivos y afinando la experiencia artística y musical.</p>
+                <h2>Game Features</h2>
             </header>
+            
+            <div class="slider-container">
+                <button class="slider-btn prev-btn" onclick="slideLeft()">&#10094;</button>
+                
+                <div class="slider-track" id="slider-track">
+                    <div class="slider-item">
+                        <img src="assets/env_placeholder.png" alt="Feature 1">
+                        <h4>Sistema de Diálogos</h4>
+                    </div>
+                    <div class="slider-item">
+                        <img src="assets/char_placeholder.png" alt="Feature 2">
+                        <h4>Progresión de Habilidades</h4>
+                    </div>
+                    <div class="slider-item">
+                        <img src="assets/env_placeholder.png" alt="Feature 3">
+                        <h4>Mundo Dinámico</h4>
+                    </div>
+                    <div class="slider-item">
+                        <img src="assets/avatar_placeholder.jpg" alt="Feature 4">
+                        <h4>Jefes Mitológicos</h4>
+                    </div>
+                    <div class="slider-item">
+                        <img src="assets/hero_bg.jpg" alt="Feature 5">
+                        <h4>Banda Sonora Épica</h4>
+                    </div>
+                </div>
+
+                <button class="slider-btn next-btn" onclick="slideRight()">&#10095;</button>
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
     <div id="footer">
         <div class="container">
-            <h2>Echoes of Ithaca</h2>
-            <p>&copy; 2026 Nemea Digital Studio. Todos los derechos reservados.</p>
+            <hr class="footer-line">
+            <div class="social-icons">
+                <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+                <a href="#" class="social-link" title="Instagram">📷</a>
+                <a href="#" class="social-link" title="YouTube">▶️</a>
+                <a href="#" class="social-link" title="Discord">💬</a>
+            </div>
         </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>

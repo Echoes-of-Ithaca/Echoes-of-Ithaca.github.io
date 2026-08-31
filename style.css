@@ -37,15 +37,9 @@ ul { list-style: none; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: linear-gradient(to bottom, rgba(61, 43, 31, 0.7), rgba(61, 43, 31, 0.3)), url('assets/hero_bg.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-#header.innerpage {
-    padding: 3rem 0;
-    text-align: center;
-    background-image: linear-gradient(to bottom, rgba(61, 43, 31, 0.8), rgba(61, 43, 31, 0.8)), url('assets/env_placeholder.png');
+    /* Usando la imagen estática generada temporalmente como fondo. 
+       Para poner el GIF real, cambia 'hero_bg.jpg' por tu archivo '.gif' */
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('assets/hero_bg.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -54,7 +48,7 @@ ul { list-style: none; }
     display: flex;
     justify-content: center;
     padding: 2rem 0;
-    background: rgba(255,251,240, 0.1);
+    background: rgba(0,0,0, 0.4);
     backdrop-filter: blur(5px);
     width: 100%;
 }
@@ -93,34 +87,30 @@ ul { list-style: none; }
 .hero-content h1 {
     font-family: var(--font-heading);
     font-size: 5rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-    font-size: 1.5rem;
     margin-bottom: 2rem;
-    max-width: 600px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
+    color: #fff;
 }
 
-.btn {
+.play-btn {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: var(--color-primary);
-    color: var(--color-text);
+    padding: 1rem 4rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    color: #fff;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.2rem;
-    border-radius: 5px;
+    font-size: 1.5rem;
+    border-radius: 50px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
 }
 
-.btn:hover {
-    background-color: var(--color-accent);
-    color: white;
-    transform: translateY(-2px);
+.play-btn:hover {
+    background-color: #fff;
+    color: var(--color-text);
+    transform: scale(1.05);
 }
 
 /* Common Layout */
@@ -144,10 +134,11 @@ ul { list-style: none; }
     font-family: var(--font-heading);
     font-size: 2.5rem;
     color: var(--color-accent);
-    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Features (3 columns) */
+/* Core Pillars (3 columns) */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -155,108 +146,110 @@ ul { list-style: none; }
     text-align: center;
 }
 
-.feature-box img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
+.icon-placeholder {
+    font-size: 4rem;
     margin-bottom: 1.5rem;
-    border: 4px solid var(--color-secondary);
 }
 
 .feature-box h3 {
     font-family: var(--font-heading);
     color: var(--color-text);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Epic Page Styles */
-.article-content {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-}
-.article-content h3 {
-    font-family: var(--font-heading);
-    color: var(--color-accent);
     font-size: 1.8rem;
-    margin-top: 3rem;
     margin-bottom: 1rem;
 }
-.article-content p {
-    margin-bottom: 1.5rem;
-}
-.article-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 2rem 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
 
-.collab-box {
-    background-color: var(--color-primary);
-    padding: 3rem;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 4rem;
-}
-.collab-box h3 { margin-top: 0; color: var(--color-text); }
-
-/* Team Page Styles */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.team-card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-}
-
-.team-avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 4px solid var(--color-primary);
-}
-
-.team-links {
-    margin-top: 1.5rem;
+/* Game Features Slider */
+.slider-container {
+    position: relative;
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    width: 100%;
 }
 
-.team-links a {
-    color: var(--color-accent);
-    font-weight: 600;
-    font-size: 0.9rem;
+.slider-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 1rem;
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
+    width: 100%;
 }
+.slider-track::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.slider-item {
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.slider-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.slider-item h4 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+    font-size: 1.2rem;
+}
+
+.slider-btn {
+    background: var(--color-primary);
+    color: var(--color-text);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.slider-btn:hover { background: var(--color-accent); color: white; }
+.prev-btn { left: -20px; }
+.next-btn { right: -20px; }
 
 /* Footer */
 #footer {
-    background-color: var(--color-text);
-    color: white;
-    text-align: center;
     padding: 3rem 0;
+    background-color: var(--color-bg);
 }
-#footer h2 {
-    font-family: var(--font-heading);
-    color: var(--color-primary);
-    margin-bottom: 1rem;
+
+.footer-line {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, var(--color-accent), transparent);
+    margin-bottom: 2rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-link {
+    font-size: 2rem;
+    color: var(--color-text);
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    color: var(--color-accent);
 }
 
 /* Responsive */

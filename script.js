@@ -36,16 +36,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+// Slider Logic for index.html
+function slideLeft() {
+    const track = document.getElementById('slider-track');
+    if (track) {
+        track.scrollBy({ left: -320, behavior: 'smooth' });
+    }
+}
+
+function slideRight() {
+    const track = document.getElementById('slider-track');
+    if (track) {
+        track.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+}
 });
