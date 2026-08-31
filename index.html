@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="es">
 <head>
-    <title>Echoes of Ithaca - Inicio</title>
+    <title>Echoes of Ithaca</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,17 +14,23 @@
         <nav id="nav">
             <div class="nav-line nav-line-left"></div>
             <ul>
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="production.html">Production</a></li>
-                <li><a href="epic.html">Epic: The Musical</a></li>
+                <li class="active"><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li><a href="team.html" data-es="Equipo" data-en="Team">Equipo</a></li>
+                <li><a href="production.html" data-es="Producción" data-en="Production">Producción</a></li>
+                <li><a href="epic.html" data-es="Epic: The Musical" data-en="Epic: The Musical">Epic: The Musical</a></li>
             </ul>
             <div class="nav-line nav-line-right"></div>
+            
+            <div class="lang-toggle">
+                <span onclick="setLanguage('es')" id="btn-es" class="active">ES</span>
+                <span class="separator">/</span>
+                <span onclick="setLanguage('en')" id="btn-en">EN</span>
+            </div>
         </nav>
         
         <div class="hero-content">
             <h1>Echoes of Ithaca</h1>
-            <a href="https://github.com/Echoes-of-Ithaca" target="_blank" class="btn play-btn">Play</a>
+            <a href="https://github.com/Echoes-of-Ithaca" target="_blank" class="btn play-btn" data-es="Jugar" data-en="Play">Jugar</a>
         </div>
     </div>
 
@@ -32,24 +38,24 @@
     <div class="wrapper style1" id="pillars">
         <div class="container">
             <header class="section-header">
-                <h2>Core Pillars</h2>
+                <h2 data-es="Pilares Principales" data-en="Core Pillars">Pilares Principales</h2>
             </header>
             
             <div class="features-grid">
                 <article class="feature-box">
                     <div class="icon-placeholder">🎵</div>
-                    <h3>Música</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <h3 data-es="Música" data-en="Music">Música</h3>
+                    <p data-es="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </article>
                 <article class="feature-box">
                     <div class="icon-placeholder">⚔️</div>
-                    <h3>Combate</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <h3 data-es="Combate" data-en="Combat">Combate</h3>
+                    <p data-es="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </article>
                 <article class="feature-box">
                     <div class="icon-placeholder">🧭</div>
-                    <h3>Exploración</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <h3 data-es="Exploración" data-en="Exploration">Exploración</h3>
+                    <p data-es="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." data-en="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                 </article>
             </div>
         </div>
@@ -59,7 +65,7 @@
     <div class="wrapper alt" id="game-features">
         <div class="container">
             <header class="section-header">
-                <h2>Game Features</h2>
+                <h2 data-es="Características del Juego" data-en="Game Features">Características del Juego</h2>
             </header>
             
             <div class="slider-container">
@@ -68,23 +74,23 @@
                 <div class="slider-track" id="slider-track">
                     <div class="slider-item">
                         <img src="assets/env_placeholder.png" alt="Feature 1">
-                        <h4>Sistema de Diálogos</h4>
+                        <h4 data-es="Sistema de Diálogos" data-en="Dialogue System">Sistema de Diálogos</h4>
                     </div>
                     <div class="slider-item">
                         <img src="assets/char_placeholder.png" alt="Feature 2">
-                        <h4>Progresión de Habilidades</h4>
+                        <h4 data-es="Progresión de Habilidades" data-en="Skill Progression">Progresión de Habilidades</h4>
                     </div>
                     <div class="slider-item">
                         <img src="assets/env_placeholder.png" alt="Feature 3">
-                        <h4>Mundo Dinámico</h4>
+                        <h4 data-es="Mundo Dinámico" data-en="Dynamic World">Mundo Dinámico</h4>
                     </div>
                     <div class="slider-item">
                         <img src="assets/avatar_placeholder.jpg" alt="Feature 4">
-                        <h4>Jefes Mitológicos</h4>
+                        <h4 data-es="Jefes Mitológicos" data-en="Mythological Bosses">Jefes Mitológicos</h4>
                     </div>
                     <div class="slider-item">
                         <img src="assets/hero_bg.jpg" alt="Feature 5">
-                        <h4>Banda Sonora Épica</h4>
+                        <h4 data-es="Banda Sonora Épica" data-en="Epic Soundtrack">Banda Sonora Épica</h4>
                     </div>
                 </div>
 

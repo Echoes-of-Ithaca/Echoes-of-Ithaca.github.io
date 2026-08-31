@@ -14,15 +14,21 @@
         <nav id="nav">
             <div class="nav-line nav-line-left"></div>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#features">El Juego</a></li>
-                <li><a href="epic.html">Epic: The Musical</a></li>
-                <li class="active"><a href="team.html">El Equipo</a></li>
+                <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li class="active"><a href="team.html" data-es="Equipo" data-en="Team">Equipo</a></li>
+                <li><a href="production.html" data-es="Producción" data-en="Production">Producción</a></li>
+                <li><a href="epic.html" data-es="Epic: The Musical" data-en="Epic: The Musical">Epic: The Musical</a></li>
             </ul>
             <div class="nav-line nav-line-right"></div>
+            
+            <div class="lang-toggle">
+                <span onclick="setLanguage('es')" id="btn-es" class="active">ES</span>
+                <span class="separator">/</span>
+                <span onclick="setLanguage('en')" id="btn-en">EN</span>
+            </div>
         </nav>
         <div class="hero-content" style="padding-top: 4rem;">
-            <h1>Nemea Digital Studio</h1>
+            <h1 data-es="Nemea Digital Studio" data-en="Nemea Digital Studio">Nemea Digital Studio</h1>
         </div>
     </div>
 
@@ -30,8 +36,8 @@
     <div class="wrapper style1">
         <div class="container">
             <header class="section-header">
-                <h2>Conoce a los creadores</h2>
-                <p>Somos un equipo multidisciplinar unido por la pasión por los videojuegos y la mitología.</p>
+                <h2 data-es="Conoce a los creadores" data-en="Meet the Creators">Conoce a los creadores</h2>
+                <p data-es="Somos un equipo multidisciplinar unido por la pasión por los videojuegos y la mitología." data-en="We are a multidisciplinary team united by a passion for video games and mythology.">Somos un equipo multidisciplinar unido por la pasión por los videojuegos y la mitología.</p>
             </header>
             
             <div class="team-grid" id="team-grid-container">
@@ -43,8 +49,13 @@
     <!-- Footer -->
     <div id="footer">
         <div class="container">
-            <h2>Echoes of Ithaca</h2>
-            <p>&copy; 2026 Nemea Digital Studio. Todos los derechos reservados.</p>
+            <hr class="footer-line">
+            <div class="social-icons">
+                <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+                <a href="#" class="social-link" title="Instagram">📷</a>
+                <a href="#" class="social-link" title="YouTube">▶️</a>
+                <a href="#" class="social-link" title="Discord">💬</a>
+            </div>
         </div>
     </div>
 

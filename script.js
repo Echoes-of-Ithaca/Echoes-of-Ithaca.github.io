@@ -1,21 +1,37 @@
+// Language translation logic
+function setLanguage(lang) {
+    // Replace text in all elements with data-es / data-en
+    document.querySelectorAll('[data-es]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+    });
+
+    // Update active state on toggle buttons
+    document.getElementById('btn-es').classList.remove('active');
+    document.getElementById('btn-en').classList.remove('active');
+    document.getElementById('btn-' + lang).classList.add('active');
+
+    // Save preference
+    localStorage.setItem('lang', lang);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Inject Team Members (only on team.html)
     const teamGrid = document.getElementById('team-grid-container');
     
     if (teamGrid) {
         const teamMembers = [
-            { name: "Nombre Apellido", role: "Director Creativo", bio: "Apasionado por la narrativa emergente y los mitos clásicos. Liderando la visión del estudio.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "Productor", bio: "Organizando el caos creativo para que el barco llegue a Ítaca.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "Lead Programmer", bio: "Arquitecto de los sistemas detrás de la magia de los dioses.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "Game Designer", bio: "Creando mecánicas que desafíen la mente y los reflejos.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "Lead Artist", bio: "Dando color pastel a los paisajes de la antigua Grecia.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "3D Generalist", bio: "Esculpiendo monstruos marinos y templos olvidados.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "Animator", bio: "Dando vida y movimiento a la furia de los dioses.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "UI/UX Designer", bio: "Asegurando que la interfaz sea tan bella como funcional.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "Audio Director", bio: "Creando el paisaje sonoro que acompaña a Odiseo.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "Composer", bio: "Escribiendo las notas que resonarán en el corazón del jugador.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "Writer", bio: "Forjando diálogos épicos dignos de Homero.", linkedin: "#", portfolio: "#" },
-            { name: "Nombre Apellido", role: "QA Tester", bio: "Buscando los bugs que intentan hundir nuestro barco.", linkedin: "#", portfolio: "#" }
+            { name: "Nombre Apellido", role_es: "Director Creativo", role_en: "Creative Director", bio_es: "Apasionado por la narrativa emergente y los mitos clásicos.", bio_en: "Passionate about emergent narrative and classic myths.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "Productor", role_en: "Producer", bio_es: "Organizando el caos creativo.", bio_en: "Organizing the creative chaos.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "Lead Programmer", role_en: "Lead Programmer", bio_es: "Arquitecto de los sistemas detrás de la magia.", bio_en: "Architect of the systems behind the magic.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "Game Designer", role_en: "Game Designer", bio_es: "Creando mecánicas que desafíen la mente.", bio_en: "Creating mechanics that challenge the mind.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "Lead Artist", role_en: "Lead Artist", bio_es: "Dando color pastel a los paisajes.", bio_en: "Giving pastel colors to the landscapes.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "3D Generalist", role_en: "3D Generalist", bio_es: "Esculpiendo monstruos marinos.", bio_en: "Sculpting sea monsters.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "Animator", role_en: "Animator", bio_es: "Dando vida a la furia de los dioses.", bio_en: "Bringing the gods' fury to life.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "UI/UX Designer", role_en: "UI/UX Designer", bio_es: "Haciendo la interfaz funcional y bella.", bio_en: "Making the interface functional and beautiful.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "Audio Director", role_en: "Audio Director", bio_es: "Creando el paisaje sonoro de Odiseo.", bio_en: "Creating Odysseus' soundscape.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "Composer", role_en: "Composer", bio_es: "Escribiendo notas para el corazón.", bio_en: "Writing notes for the heart.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "Writer", role_en: "Writer", bio_es: "Forjando diálogos épicos.", bio_en: "Forging epic dialogues.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role_es: "QA Tester", role_en: "QA Tester", bio_es: "Buscando los bugs del barco.", bio_en: "Hunting the ship's bugs.", linkedin: "#", portfolio: "#" }
         ];
         
         teamMembers.forEach(member => {
@@ -24,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
             memberDiv.innerHTML = `
                 <img src="assets/avatar_placeholder.jpg" alt="${member.name}" class="team-avatar">
                 <h3 style="font-family: var(--font-heading); color: var(--color-text); font-size: 1.3rem;">${member.name}</h3>
-                <p style="color: var(--color-accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">${member.role}</p>
-                <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.4;">${member.bio}</p>
+                <p style="color: var(--color-accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;" data-es="${member.role_es}" data-en="${member.role_en}">${member.role_es}</p>
+                <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.4;" data-es="${member.bio_es}" data-en="${member.bio_en}">${member.bio_es}</p>
                 <div class="team-links">
                     <a href="${member.portfolio}" target="_blank">Portfolio</a>
                     <span>|</span>
@@ -35,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
             teamGrid.appendChild(memberDiv);
         });
     }
+
+    // Initialize language on load
+    const savedLang = localStorage.getItem('lang') || 'es';
+    setLanguage(savedLang);
 
 // Slider Logic for index.html
 function slideLeft() {
