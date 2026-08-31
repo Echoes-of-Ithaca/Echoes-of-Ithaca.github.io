@@ -47,30 +47,65 @@ ul { list-style: none; }
 #nav {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 2rem 0;
     background: rgba(0,0,0, 0.4);
     backdrop-filter: blur(5px);
     width: 100%;
 }
 
+.nav-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--color-primary);
+    position: relative;
+    opacity: 0.8;
+}
+
+.nav-line-left { margin-right: 2rem; }
+.nav-line-right { margin-left: 2rem; }
+
+.nav-line-left::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -12px;
+    width: 3px;
+    height: 26px;
+    background-color: var(--color-primary);
+}
+
+.nav-line-right::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -12px;
+    width: 3px;
+    height: 26px;
+    background-color: var(--color-primary);
+}
+
 #nav ul {
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
+    align-items: center;
 }
 
 #nav ul li a {
     color: white;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.5rem;
+    border-bottom: 2px solid transparent;
 }
 
 #nav ul li a:hover, #nav ul li.active a {
-    background-color: var(--color-accent);
+    background-color: transparent;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
 }
 
 /* Homepage Hero Content */
