@@ -1,49 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Inject Team Members
-    const teamGrid = document.getElementById('team-grid');
-    const roles = [
-        "Director Creativo", "Productor", "Lead Programmer", "Game Designer",
-        "Lead Artist", "3D Generalist", "Animator", "UI/UX Designer",
-        "Audio Director", "Composer", "Writer", "QA Tester"
-    ];
+    // Inject Team Members (only on team.html)
+    const teamGrid = document.getElementById('team-grid-container');
     
-    // Generate 12 team members
-    for (let i = 0; i < 12; i++) {
-        const memberDiv = document.createElement('div');
-        memberDiv.className = 'team-member';
-        memberDiv.innerHTML = `
-            <img src="assets/avatar_placeholder.jpg" alt="Miembro del equipo" class="team-avatar">
-            <h3 class="team-name">Nemea Dev ${i + 1}</h3>
-            <p class="team-role">${roles[i]}</p>
-        `;
-        teamGrid.appendChild(memberDiv);
+    if (teamGrid) {
+        const teamMembers = [
+            { name: "Nombre Apellido", role: "Director Creativo", bio: "Apasionado por la narrativa emergente y los mitos clásicos. Liderando la visión del estudio.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "Productor", bio: "Organizando el caos creativo para que el barco llegue a Ítaca.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "Lead Programmer", bio: "Arquitecto de los sistemas detrás de la magia de los dioses.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "Game Designer", bio: "Creando mecánicas que desafíen la mente y los reflejos.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "Lead Artist", bio: "Dando color pastel a los paisajes de la antigua Grecia.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "3D Generalist", bio: "Esculpiendo monstruos marinos y templos olvidados.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "Animator", bio: "Dando vida y movimiento a la furia de los dioses.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "UI/UX Designer", bio: "Asegurando que la interfaz sea tan bella como funcional.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "Audio Director", bio: "Creando el paisaje sonoro que acompaña a Odiseo.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "Composer", bio: "Escribiendo las notas que resonarán en el corazón del jugador.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "Writer", bio: "Forjando diálogos épicos dignos de Homero.", linkedin: "#", portfolio: "#" },
+            { name: "Nombre Apellido", role: "QA Tester", bio: "Buscando los bugs que intentan hundir nuestro barco.", linkedin: "#", portfolio: "#" }
+        ];
+        
+        teamMembers.forEach(member => {
+            const memberDiv = document.createElement('div');
+            memberDiv.className = 'team-card';
+            memberDiv.innerHTML = `
+                <img src="assets/avatar_placeholder.jpg" alt="${member.name}" class="team-avatar">
+                <h3 style="font-family: var(--font-heading); color: var(--color-text); font-size: 1.3rem;">${member.name}</h3>
+                <p style="color: var(--color-accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem;">${member.role}</p>
+                <p style="font-size: 0.95rem; color: var(--color-text-light); line-height: 1.4;">${member.bio}</p>
+                <div class="team-links">
+                    <a href="${member.portfolio}" target="_blank">Portfolio</a>
+                    <span>|</span>
+                    <a href="${member.linkedin}" target="_blank">LinkedIn</a>
+                </div>
+            `;
+            teamGrid.appendChild(memberDiv);
+        });
     }
 
-    // Scroll Animation Observer
-    const fadeElements = document.querySelectorAll('.fade-in');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
         });
-    }, observerOptions);
-
-    fadeElements.forEach(el => {
-        observer.observe(el);
     });
-
-    // Make the hero section visible immediately on load
-    setTimeout(() => {
-        const hero = document.querySelector('.hero-content');
-        if (hero) hero.classList.add('visible');
-    }, 100);
 });

@@ -1,133 +1,77 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echoes of Ithaca</title>
-    <meta name="description" content="Página promocional del videojuego Echoes of Ithaca, basado en Epic The Musical. Desarrollado por Nemea Digital Studio.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Echoes of Ithaca - Inicio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <nav class="navbar">
-        <div class="logo">Echoes of Ithaca</div>
-        <ul class="nav-links">
-            <li><a href="#about">Sobre el Juego</a></li>
-            <li><a href="#timeline">Progreso</a></li>
-            <li><a href="#gallery">Galería</a></li>
-            <li><a href="#team">El Equipo</a></li>
-        </ul>
-    </nav>
+<body class="homepage">
 
-    <header class="hero" id="home">
-        <div class="hero-content fade-in">
-            <h1 class="game-title">Echoes of Ithaca</h1>
-            <p class="game-subtitle">Una odisea interactiva inspirada en Epic The Musical</p>
-            <a href="#about" class="cta-button">Descubre el Mito</a>
+    <!-- Header (Hero) -->
+    <div id="header" class="homepage">
+        <nav id="nav">
+            <ul>
+                <li class="active"><a href="index.html">Inicio</a></li>
+                <li><a href="#features">El Juego</a></li>
+                <li><a href="epic.html">Epic: The Musical</a></li>
+                <li><a href="team.html">El Equipo</a></li>
+            </ul>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Echoes of Ithaca</h1>
+            <p>Una odisea interactiva que reinventa el mito clásico. Descubre el mundo antiguo bajo una nueva luz.</p>
+            <a href="#features" class="btn">Descubre Más</a>
         </div>
-    </header>
+    </div>
 
-    <main>
-        <section id="about" class="section about-section fade-in">
-            <div class="container">
-                <h2 class="section-title">La Epopeya Continúa</h2>
-                <div class="about-content">
-                    <p class="about-text">
-                        Adéntrate en una experiencia narrativa y jugable sin precedentes. <strong>Echoes of Ithaca</strong> es un videojuego que toma como inspiración la grandiosidad de <em>Epic The Musical</em>, transportándote al corazón de los mitos griegos.
-                    </p>
-                    <p class="about-text">
-                        Acompaña a nuestros héroes a través de peligros inimaginables, dioses caprichosos y un viaje de regreso a casa que desafiará los límites de tu ingenio y valor. Todo ello envuelto en una estética vibrante y pastel que reinventa el mundo clásico.
-                    </p>
-                </div>
+    <!-- Features Section -->
+    <div class="wrapper style1" id="features">
+        <div class="container">
+            <header class="section-header">
+                <h2>Explora la Odisea</h2>
+                <p>Mecánicas y arte inspirados en los poemas homéricos.</p>
+            </header>
+            
+            <div class="features-grid">
+                <article class="feature-box">
+                    <img src="assets/char_placeholder.png" alt="Historia" />
+                    <h3>Narrativa Épica</h3>
+                    <p>Sigue los pasos de Odiseo en un viaje de regreso a casa que pondrá a prueba tu voluntad. Tomarás decisiones que forjarán tu propio destino.</p>
+                </article>
+                <article class="feature-box">
+                    <img src="assets/env_placeholder.png" alt="Entornos" />
+                    <h3>Mundo Vibrante</h3>
+                    <p>Sumérgete en un Mediterráneo reimaginado con una paleta de colores pastel única, desde playas cálidas hasta templos monumentales.</p>
+                </article>
+                <article class="feature-box">
+                    <img src="assets/avatar_placeholder.jpg" alt="Personajes" />
+                    <h3>Dioses y Monstruos</h3>
+                    <p>Enfréntate a criaturas legendarias y negocia con deidades implacables en un sistema de diálogos y combates llenos de estrategia.</p>
+                </article>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <section id="timeline" class="section timeline-section fade-in">
-            <div class="container">
-                <h2 class="section-title">El Viaje de Desarrollo</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Concepción</h3>
-                            <p>Nace la idea de fusionar la pasión por los mitos y la música en un videojuego único.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Pre-producción</h3>
-                            <p>Definición del estilo artístico pastel y los primeros prototipos de mecánicas.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Desarrollo Activo</h3>
-                            <p>¡Donde estamos ahora! Creando mundos, personajes y programando la magia.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Próximamente: Beta</h3>
-                            <p>Preparando una versión jugable para que los primeros aventureros prueben el juego.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Banner Section -->
+    <div class="wrapper alt">
+        <div class="container">
+            <header class="section-header">
+                <h2>El progreso de Nemea Digital Studio</h2>
+                <p>Actualmente nos encontramos en pleno desarrollo construyendo los primeros niveles interactivos y afinando la experiencia artística y musical.</p>
+            </header>
+        </div>
+    </div>
 
-        <section id="gallery" class="section gallery-section fade-in">
-            <div class="container">
-                <h2 class="section-title">Galería de Arte</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-card">
-                        <img src="assets/env_placeholder.png" alt="Diseño de Entorno" class="gallery-img">
-                        <div class="gallery-info">
-                            <h3>Entornos</h3>
-                            <p>Explora las islas y mares del mundo antiguo.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-card">
-                        <img src="assets/char_placeholder.png" alt="Diseño de Personajes" class="gallery-img" style="aspect-ratio: 3/4; object-fit: cover;">
-                        <div class="gallery-info">
-                            <h3>Personajes</h3>
-                            <p>Héroes y dioses rediseñados.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-card">
-                        <img src="assets/env_placeholder.png" alt="Diseño de Interfaz" class="gallery-img">
-                        <div class="gallery-info">
-                            <h3>Diseño & UI</h3>
-                            <p>La estética detrás de la experiencia.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="team" class="section team-section fade-in">
-            <div class="container">
-                <h2 class="section-title">Nemea Digital Studio</h2>
-                <p class="team-intro">Somos un equipo de 12 apasionados desarrolladores, artistas y diseñadores unidos por una misma visión.</p>
-                
-                <div class="team-grid" id="team-grid">
-                    <!-- Team members will be injected here via JS to keep HTML clean -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <h2 class="footer-logo">Echoes of Ithaca</h2>
+    <!-- Footer -->
+    <div id="footer">
+        <div class="container">
+            <h2>Echoes of Ithaca</h2>
             <p>&copy; 2026 Nemea Digital Studio. Todos los derechos reservados.</p>
         </div>
-    </footer>
+    </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
