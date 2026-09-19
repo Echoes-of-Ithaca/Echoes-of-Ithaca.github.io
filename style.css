@@ -73,40 +73,52 @@ ul { list-style: none; }
     top: -12px;
     width: 3px;
     height: 26px;
-    background-color: var(--color-primary);
-}
-
-.nav-line-right::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -12px;
-    width: 3px;
-    height: 26px;
-    background-color: var(--color-primary);
+    padding: 2rem 5%;
+    background: transparent;
 }
 
 #nav ul {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
+    margin: 0 2rem;
 }
 
 #nav ul li a {
-    color: white;
     font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.15rem;
-    letter-spacing: 2px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
-    padding: 0.5rem;
-    border-bottom: 2px solid transparent;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-#nav ul li a:hover, #nav ul li.active a {
-    background-color: transparent;
-    color: var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
+#nav ul li.active a, #nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
+
+.nav-line {
+    flex: 1;
+    height: 1px;
+    align-self: center;
+}
+
+.nav-line-left {
+    background: linear-gradient(to right, transparent, var(--color-primary));
+}
+
+.nav-line-right {
+    background: linear-gradient(to left, transparent, var(--color-primary));
+}
+
+/* Inner Page Header */
+#header.innerpage {
+    background: linear-gradient(to bottom, rgba(21, 17, 19, 1), rgba(28, 22, 25, 0.95));
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Subtle gold border */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 /* Language Toggle */
@@ -409,6 +421,30 @@ ul { list-style: none; }
 
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
+
+/* Team Page specific */
+.nemea-logo-container {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    border-radius: 50%; /* Make it circular or rounded */
+    padding: 2rem; /* Safe padding so corners don't get cropped by the circle */
+    width: 100%;
+    max-width: 550px;
+    aspect-ratio: 1/1;
+    margin: 1rem auto 4rem;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.nemea-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* This magic trick makes the white background disappear and blends the black logo with the gold gradient! */
+}
 
 /* Team List (Timeline Zig-Zag) */
 .team-list {
