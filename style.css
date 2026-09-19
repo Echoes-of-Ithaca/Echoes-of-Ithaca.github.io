@@ -37,7 +37,7 @@ ul { list-style: none; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('assets/Nemea_References/Menu.png');
+    background-image: url('assets/Nemea_References/Menu principal/Menu.png');
     background-size: contain; /* Encaja toda la imagen sin chafar ni recortar */
     background-position: left center;
     background-repeat: no-repeat;
