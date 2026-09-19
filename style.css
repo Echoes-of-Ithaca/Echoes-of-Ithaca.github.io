@@ -25,6 +25,17 @@ a { text-decoration: none; color: inherit; transition: color 0.3s; }
 a:hover { color: var(--color-accent); }
 ul { list-style: none; }
 
+body.homepage {
+    --color-bg: #151113; /* Dark purplish-black */
+    --color-bg-alt: #1c1619;
+    --color-primary: #d4af37; /* Gold */
+    --color-secondary: #e08b6c; /* Terracotta */
+    --color-accent: #f4d06f; /* Bright gold */
+    --color-text: #f5f0e1; /* Off-white */
+    --color-text-light: #a3958c;
+    background-color: var(--color-bg);
+}
+
 /* Navigation */
 #header {
     position: relative;
@@ -37,11 +48,11 @@ ul { list-style: none; }
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Usando la imagen estática generada temporalmente como fondo. 
-       Para poner el GIF real, cambia 'hero_bg.jpg' por tu archivo '.gif' */
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('assets/hero_bg.jpg');
+    background-image: url('assets/Nemea_References/Menu.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Prevent horizontal scroll from the disc */
 }
 
 #nav {
@@ -49,9 +60,10 @@ ul { list-style: none; }
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
-    background: rgba(0,0,0, 0.4);
-    backdrop-filter: blur(5px);
+    background: transparent; /* Changed from semi-transparent black so it blends with Menu.png */
     width: 100%;
+    position: relative;
+    z-index: 20;
 }
 
 .nav-line {
@@ -153,26 +165,20 @@ ul { list-style: none; }
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
-}
-
-.hero-content h1 {
-    font-family: var(--font-heading);
-    font-size: 5rem;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
-    color: #fff;
+    align-items: flex-start; /* Align left to match logo */
+    justify-content: flex-end; /* Push to bottom */
+    padding-left: 15%; /* Align with the logo in Menu.png */
+    padding-bottom: 15%; 
+    position: relative;
+    z-index: 10;
 }
 
 .play-btn {
     display: inline-block;
     padding: 1rem 4rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid #fff;
-    color: #fff;
+    background-color: rgba(212, 175, 55, 0.2); /* Golden tint */
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.5rem;
@@ -183,9 +189,29 @@ ul { list-style: none; }
 }
 
 .play-btn:hover {
-    background-color: #fff;
-    color: var(--color-text);
+    background-color: var(--color-primary);
+    color: var(--color-bg);
     transform: scale(1.05);
+}
+
+/* Spinning Disc */
+.spinning-disc {
+    position: absolute;
+    right: -25vw; /* Show roughly half the disc */
+    top: 50%;
+    margin-top: -35vw; /* Half of height to center vertically perfectly */
+    width: 70vw; 
+    height: 70vw;
+    max-width: 1000px;
+    max-height: 1000px;
+    z-index: 5;
+    animation: spin 30s linear infinite; /* Slow spin */
+    pointer-events: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* Common Layout */
