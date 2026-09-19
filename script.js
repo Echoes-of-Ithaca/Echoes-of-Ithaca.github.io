@@ -22,19 +22,50 @@ function setLanguage(lang) {
     localStorage.setItem('lang', lang);
 }
 
-// Slider Logic for index.html
+// Slider Logic for index.html (True Infinite Loop)
 function slideLeft() {
     const track = document.getElementById('slider-track');
-    if (track) {
-        track.scrollBy({ left: -320, behavior: 'smooth' });
-    }
+    if (!track || track.isAnimating) return;
+    track.isAnimating = true;
+
+    // Move last item to the front instantly
+    const lastItem = track.lastElementChild;
+    track.insertBefore(lastItem, track.firstElementChild);
+    
+    // Offset the track so it looks like it hasn't moved yet (300px width + 32px gap)
+    track.style.transition = 'none';
+    track.style.transform = 'translateX(-332px)';
+    
+    // Force a browser repaint so the transform applies instantly without animation
+    void track.offsetWidth;
+    
+    // Animate smoothly to 0
+    track.style.transition = 'transform 0.4s ease';
+    track.style.transform = 'translateX(0)';
+    
+    setTimeout(() => { track.isAnimating = false; }, 400);
 }
 
 function slideRight() {
     const track = document.getElementById('slider-track');
-    if (track) {
-        track.scrollBy({ left: 320, behavior: 'smooth' });
-    }
+    if (!track || track.isAnimating) return;
+    track.isAnimating = true;
+
+    // Animate the track to the left
+    track.style.transition = 'transform 0.4s ease';
+    track.style.transform = 'translateX(-332px)';
+    
+    setTimeout(() => {
+        // Move first item to the end instantly
+        const firstItem = track.firstElementChild;
+        track.appendChild(firstItem);
+        
+        // Reset the track position instantly
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        
+        track.isAnimating = false;
+    }, 400);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
