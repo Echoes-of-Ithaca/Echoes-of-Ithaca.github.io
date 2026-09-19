@@ -1,14 +1,14 @@
 :root {
-    --color-bg: #fffbf0;
-    --color-bg-alt: #fff8e7;
-    --color-primary: #f4d06f;
-    --color-secondary: #ffb499;
-    --color-accent: #e08b6c;
-    --color-text: #3d2b1f;
-    --color-text-light: #6a5749;
+    --color-bg: #151113; /* Dark purplish-black */
+    --color-bg-alt: #1c1619;
+    --color-primary: #d4af37; /* Gold */
+    --color-secondary: #e08b6c; /* Terracotta */
+    --color-accent: #f4d06f; /* Bright gold */
+    --color-text: #f5f0e1; /* Off-white */
+    --color-text-light: #a3958c;
     
     --font-heading: 'Cinzel', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-body: 'Lora', serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,17 +24,6 @@ body {
 a { text-decoration: none; color: inherit; transition: color 0.3s; }
 a:hover { color: var(--color-accent); }
 ul { list-style: none; }
-
-body.homepage {
-    --color-bg: #151113; /* Dark purplish-black */
-    --color-bg-alt: #1c1619;
-    --color-primary: #d4af37; /* Gold */
-    --color-secondary: #e08b6c; /* Terracotta */
-    --color-accent: #f4d06f; /* Bright gold */
-    --color-text: #f5f0e1; /* Off-white */
-    --color-text-light: #a3958c;
-    background-color: var(--color-bg);
-}
 
 /* Navigation */
 #header {
