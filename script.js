@@ -1,4 +1,4 @@
-// Language translation logic
+﻿// Language translation logic
 function setLanguage(lang) {
     document.querySelectorAll('[data-es]').forEach(el => {
         if(el.getAttribute('data-' + lang)) {
@@ -158,4 +158,53 @@ function switchTab(tabId) {
     
     const targetBtn = document.getElementById('btn-tab-' + tabId);
     if(targetBtn) targetBtn.classList.add('active');
+}
+
+// Timeline Gallery Logic
+function openGallery(category, id) {
+    // category is 'char' or 'weapon'
+    const squaresContainer = document.getElementById(category + '-squares');
+    const galleriesContainer = document.getElementById(category + '-galleries');
+    
+    if(!squaresContainer || !galleriesContainer) return;
+    
+    // Remove active from all squares in this category
+    squaresContainer.querySelectorAll('.timeline-square').forEach(sq => sq.classList.remove('active'));
+    // Hide all galleries in this category
+    galleriesContainer.querySelectorAll('.timeline-gallery').forEach(gal => {
+        gal.classList.remove('active');
+        gal.style.display = 'none';
+    });
+    
+    // Find the clicked square (based on the onclick attribute) and make it active
+    const clickedSquare = Array.from(squaresContainer.querySelectorAll('.timeline-square')).find(sq => sq.getAttribute('onclick').includes(id));
+    if(clickedSquare) clickedSquare.classList.add('active');
+    
+    // Show the target gallery
+    const targetGallery = document.getElementById('gallery-' + category + '-' + id);
+    if(targetGallery) {
+        targetGallery.style.display = 'flex';
+        // Small delay to allow display:flex to apply before adding opacity class for animation (if needed, but our CSS handles animation on display block/flex directly usually)
+        setTimeout(() => targetGallery.classList.add('active'), 10);
+    }
+}
+
+// Timeline Main Sections Logic
+function openTimelineMain(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.timeline-section-content').forEach(el => {
+        el.style.display = 'none';
+    });
+    // Remove active from main menu cards
+    document.querySelectorAll('.main-menu-card').forEach(el => {
+        el.classList.remove('active');
+    });
+    
+    // Show selected section
+    const targetSection = document.getElementById('section-' + sectionId);
+    if(targetSection) targetSection.style.display = 'block';
+    
+    // Activate clicked menu
+    const targetMenu = document.getElementById('menu-' + sectionId);
+    if(targetMenu) targetMenu.classList.add('active');
 }
