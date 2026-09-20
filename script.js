@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 linkedin: "#", portfolio: "#" 
             },
             { 
-                name: "Marc Avante", 
+                name: "Marc Avante", image: "assets/Nemea_References/Equipo/Marc.jpg",
                 role_es: "Lead Programmer", role_en: "Lead Programmer", 
                 bio_es: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
                 bio_en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 

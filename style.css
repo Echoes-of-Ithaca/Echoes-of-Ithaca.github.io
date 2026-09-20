@@ -504,10 +504,9 @@ ul { list-style: none; }
 }
 
 .team-avatar {
-    width: 220px;
-    height: 280px;
+    width: 200px;
+    height: auto;
     border-radius: 18px;
-    object-fit: cover;
     flex-shrink: 0;
     border: 2px solid var(--color-primary);
 }
