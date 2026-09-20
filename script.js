@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             { 
                 name: "Marc Avante", image: "assets/Nemea_References/Equipo/Marc.jpg",
                 role_es: "Lead Programmer", role_en: "Lead Programmer", 
-                bio_es: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-                bio_en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
-                linkedin: "#", portfolio: "#" 
+                bio_es: "Desde bien pequeño siempre me ha apasionado el mundo del videojuego. No es sorpresa que 20 años después me haya decantado por querer hacerlos.<br><br>Llevo programando desde 2018, y enfocado al ámbito de los videojuegos desde 2022. He trabajado con motores propios, Unity y Unreal Engine. Ya sea sistemas, gameplay o herramientas, escribir código para que la visión tanto mía como de mis compañeros llegue a realizarse es una tarea que me llena.<br><br>Mis géneros favoritos de videojuego son los de Rol y Estrategia por turnos. Fuera del mundo de la programación, también me gusta la música y el ajedrez. ¡Espero que os guste nuestro juego!", 
+                bio_en: "Since I was very young, I have always been passionate about the world of video games. It's no surprise that 20 years later I have decided to make them.<br><br>I've been programming since 2018, and focused on video games since 2022. I have worked with custom engines, Unity, and Unreal Engine. Whether it's systems, gameplay, or tools, writing code so that both my vision and my teammates' vision comes to life is a task that fulfills me.<br><br>My favorite video game genres are RPG and Turn-based Strategy. Outside the world of programming, I also like music and chess. I hope you like our game!", 
+                linkedin: "https://www.linkedin.com/in/marcavante/", portfolio: "#" 
             },
             { 
                 name: "Carlos Suárez", image: "assets/Nemea_References/Equipo/Carlos.jpg",
