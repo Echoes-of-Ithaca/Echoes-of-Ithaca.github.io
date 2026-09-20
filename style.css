@@ -583,7 +583,7 @@ ul { list-style: none; }
     gap: 2rem;
 }
 .evo-card {
-    background: white;
+    background: rgba(28, 22, 25, 0.8);
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -609,7 +609,7 @@ ul { list-style: none; }
     flex-wrap: wrap;
     gap: 3rem;
     align-items: center;
-    background: white;
+    background: rgba(28, 22, 25, 0.8);
     padding: 3rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -666,7 +666,7 @@ ul { list-style: none; }
 }
 .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 .tech-card {
@@ -874,4 +874,37 @@ ul { list-style: none; }
 }
 .main-menu-card {
     padding: 2rem 1.5rem !important;
+}
+
+/* Epic The Musical Tab */
+.epic-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.epic-column {
+    flex: 1 1 45%;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.epic-text-box {
+    background: rgba(28, 22, 25, 0.8);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 6px solid var(--color-primary);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+.epic-text-box h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+.epic-text-box p {
+    color: var(--color-text);
+    line-height: 1.6;
 }

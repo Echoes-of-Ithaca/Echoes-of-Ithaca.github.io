@@ -1,43 +1,23 @@
-<!DOCTYPE HTML>
-<html lang="es">
-<head>
-    <title>Epic: The Musical - Echoes of Ithaca</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body class="innerpage">
+﻿import re
 
-    <!-- Language Toggle (Independent) -->
-    <div class="lang-toggle">
-        <span onclick="setLanguage('es')" id="btn-es" class="active">ES</span>
-        <span class="separator">/</span>
-        <span onclick="setLanguage('en')" id="btn-en">EN</span>
-    </div>
+# 1. REMOVE FROM PRODUCTION.HTML
+with open("production.html", "r", encoding="utf-8") as f:
+    prod_html = f.read()
 
-    <!-- Header (Inner) -->
-    <div id="header" class="innerpage">
-        <nav id="nav">
-            <div class="nav-line nav-line-left"></div>
-            <ul>
-                <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
-                <li><a href="team.html" data-es="Equipo" data-en="Team">Equipo</a></li>
-                <li><a href="production.html" data-es="El Juego" data-en="The Game">El Juego</a></li>
-                <li class="active"><a href="epic.html" data-es="Epic: The Musical" data-en="Epic: The Musical">Epic: The Musical</a></li>
-            </ul>
-            <div class="nav-line nav-line-right"></div>
-        </nav>
-        <div class="hero-content" style="padding-top: 4rem;">
-            <h1 data-es="Nuestra Mayor Inspiración" data-en="Our Greatest Inspiration">Nuestra Mayor Inspiración</h1>
-        </div>
-    </div>
+# Remove button
+prod_html = re.sub(r'\s*<button class="tab-btn" onclick="switchTab\(\'epic\'\)" id="btn-tab-epic".*?Epic The Musical</button>', '', prod_html)
 
-    <!-- Content -->
-    <div class="wrapper style1">
-        <div class="container">
-            <div class="article-content">
-                <div class="epic-container">
+# Remove content
+prod_html = re.sub(r'\s*<!-- Tab 3: Epic The Musical -->\s*<div id="tab-epic".*?(?=</div>\s*</div>\s*</div>\s*<!-- Footer -->)', '', prod_html, flags=re.DOTALL)
+
+with open("production.html", "w", encoding="utf-8") as f:
+    f.write(prod_html)
+
+# 2. ADD TO EPIC.HTML
+with open("epic.html", "r", encoding="utf-8") as f:
+    epic_html = f.read()
+
+new_epic_content = """<div class="epic-container">
                     <!-- Columna Izquierda: Spotify -->
                     <div class="epic-column">
                         <iframe style="border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" src="https://open.spotify.com/embed/playlist/3sdEH7HfFE3d4xry5RnnLr?utm_source=generator&theme=0" width="100%" height="450" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -55,25 +35,11 @@
                             <p data-es="Una recopilación de animáticas y arte creado por artistas y fans de todo el mundo. Su talento y pasión por la historia nos motiva a dar lo mejor en nuestro diseño visual." data-en="A compilation of animatics and art created by fans and artists from all over the world. Their talent and passion for the story motivates us to give our best in our visual design.">Una recopilación de animáticas y arte creado por artistas y fans de todo el mundo. Su talento y pasión por la historia nos motiva a dar lo mejor en nuestro diseño visual.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
+                </div>"""
 
-    <!-- Footer -->
-    <div id="footer">
-        <div class="container">
-            <hr class="footer-line">
-            <div class="social-icons">
-                <a href="#" class="social-link" title="Twitter/X">𝕏</a>
-                <a href="#" class="social-link" title="Instagram">📷</a>
-                <a href="#" class="social-link" title="YouTube">▶️</a>
-                <a href="#" class="social-link" title="Discord">💬</a>
-            </div>
-        </div>
-    </div>
+# Replace inside the container of epic.html
+epic_html = re.sub(r'<div class="article-content">.*?</div>\s*</div>\s*</div>', '<div class="article-content">\n                ' + new_epic_content + '\n            </div>\n        </div>\n    </div>', epic_html, flags=re.DOTALL)
 
-    <script src="script.js"></script>
-</body>
-</html>
+with open("epic.html", "w", encoding="utf-8") as f:
+    f.write(epic_html)
+

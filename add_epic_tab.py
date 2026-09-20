@@ -1,42 +1,16 @@
-<!DOCTYPE HTML>
-<html lang="es">
-<head>
-    <title>Epic: The Musical - Echoes of Ithaca</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-</head>
-<body class="innerpage">
+﻿import re
 
-    <!-- Language Toggle (Independent) -->
-    <div class="lang-toggle">
-        <span onclick="setLanguage('es')" id="btn-es" class="active">ES</span>
-        <span class="separator">/</span>
-        <span onclick="setLanguage('en')" id="btn-en">EN</span>
-    </div>
+with open("production.html", "r", encoding="utf-8") as f:
+    html = f.read()
 
-    <!-- Header (Inner) -->
-    <div id="header" class="innerpage">
-        <nav id="nav">
-            <div class="nav-line nav-line-left"></div>
-            <ul>
-                <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
-                <li><a href="team.html" data-es="Equipo" data-en="Team">Equipo</a></li>
-                <li><a href="production.html" data-es="El Juego" data-en="The Game">El Juego</a></li>
-                <li class="active"><a href="epic.html" data-es="Epic: The Musical" data-en="Epic: The Musical">Epic: The Musical</a></li>
-            </ul>
-            <div class="nav-line nav-line-right"></div>
-        </nav>
-        <div class="hero-content" style="padding-top: 4rem;">
-            <h1 data-es="Nuestra Mayor Inspiración" data-en="Our Greatest Inspiration">Nuestra Mayor Inspiración</h1>
-        </div>
-    </div>
+# 1. Add the tab button
+btn_html = '                <button class="tab-btn" onclick="switchTab(\'epic\')" id="btn-tab-epic" data-es="Epic The Musical" data-en="Epic The Musical">Epic The Musical</button>'
+html = html.replace('data-es="Producción" data-en="Production">Producción</button>', 'data-es="Producción" data-en="Production">Producción</button>\n' + btn_html)
 
-    <!-- Content -->
-    <div class="wrapper style1">
-        <div class="container">
-            <div class="article-content">
+# 2. Add the tab content at the end of the tabs-container
+new_epic_content = """
+            <!-- Tab 3: Epic The Musical -->
+            <div id="tab-epic" class="tab-content" style="display:none;">
                 <div class="epic-container">
                     <!-- Columna Izquierda: Spotify -->
                     <div class="epic-column">
@@ -57,23 +31,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
+"""
 
-    <!-- Footer -->
-    <div id="footer">
-        <div class="container">
-            <hr class="footer-line">
-            <div class="social-icons">
-                <a href="#" class="social-link" title="Twitter/X">𝕏</a>
-                <a href="#" class="social-link" title="Instagram">📷</a>
-                <a href="#" class="social-link" title="YouTube">▶️</a>
-                <a href="#" class="social-link" title="Discord">💬</a>
-            </div>
-        </div>
-    </div>
+html = html.replace('</div>\n        </div>\n    </div>\n\n    <!-- Footer -->', '</div>\n' + new_epic_content + '\n        </div>\n    </div>\n\n    <!-- Footer -->')
 
-    <script src="script.js"></script>
-</body>
-</html>
+with open("production.html", "w", encoding="utf-8") as f:
+    f.write(html)
