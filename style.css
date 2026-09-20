@@ -504,8 +504,8 @@ ul { list-style: none; }
 }
 
 .team-avatar {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 280px;
     border-radius: 18px;
     object-fit: cover;
     flex-shrink: 0;

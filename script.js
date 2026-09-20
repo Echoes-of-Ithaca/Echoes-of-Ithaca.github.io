@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 linktree: "https://linktr.ee/andy.d"
             },
             { 
-                name: "Pablo Longaron", 
+                name: "Pablo Longaron", image: "assets/Nemea_References/Equipo/Pablo.jpg",
                 role_es: "Marketing / Lead Artist", role_en: "Marketing / Lead Artist", 
                 bio_es: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
                 bio_en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
