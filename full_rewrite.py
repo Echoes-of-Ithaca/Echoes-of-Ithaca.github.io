@@ -1,4 +1,10 @@
-// Language translation logic
+﻿import re
+
+with open("script.js", "r", encoding="utf-8") as f:
+    original = f.read()
+
+# Let's just generate the whole file properly to avoid any partial matching issues
+js_code = """// Language translation logic
 function setLanguage(lang) {
     document.querySelectorAll('[data-es]').forEach(el => {
         if(el.getAttribute('data-' + lang)) {
@@ -159,3 +165,7 @@ function switchTab(tabId) {
     const targetBtn = document.getElementById('btn-tab-' + tabId);
     if(targetBtn) targetBtn.classList.add('active');
 }
+"""
+
+with open("script.js", "w", encoding="utf-8") as f:
+    f.write(js_code)
